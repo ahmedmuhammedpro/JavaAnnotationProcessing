@@ -1,0 +1,22 @@
+plugins {
+    id 'application'
+}
+
+application {
+    mainClass = "com.iti.pizza.PizzaStore"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    annotationProcessor project(':pizza-factory')
+    implementation project(':pizza-factory')
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+test {
+    useJUnitPlatform()
+}
